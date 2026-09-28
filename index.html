@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briggit Berastegui — Business Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F1; --ink:#1D1913; --muted:#6E6455; --line:#E4DCCB;
+  --accent:#B4432A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+header.site{position:sticky;top:0;background:rgba(250,247,241,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--ink)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.04em}
+.nav-links a:hover{color:var(--accent)}
+.hero{padding:96px 0 72px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:28px}
+h1{font-family:Fraunces,serif;font-weight:500;font-size:clamp(44px,7.5vw,88px);line-height:1.04;letter-spacing:-.015em;margin-bottom:28px}
+.lede{font-size:20px;line-height:1.6;color:#3A342A;max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;margin-top:56px;border-top:1px solid var(--line)}
+.fact{flex:1 1 200px;padding:24px 24px 12px 0}
+.fact .n{font-family:Fraunces,serif;font-size:38px;font-weight:600}
+.fact .n em{font-style:normal;color:var(--accent)}
+.fact .l{font-size:13px;color:var(--muted);margin-top:4px;letter-spacing:.03em;line-height:1.5}
+section.block{padding:72px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:48px}
+.sec-num{font-family:Fraunces,serif;font-size:15px;color:var(--accent);font-weight:600}
+.sec-title{font-family:Fraunces,serif;font-size:clamp(28px,4vw,40px);font-weight:500;letter-spacing:-.01em}
+.project{margin-bottom:68px}
+.project:last-child{margin-bottom:0}
+.p-tag{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.p-title{font-family:Fraunces,serif;font-size:clamp(24px,3.4vw,34px);font-weight:500;margin-bottom:16px;letter-spacing:-.01em}
+.p-short{font-size:18px;line-height:1.65;max-width:64ch;margin-bottom:18px;color:#2E2820}
+.p-short .lead{font-weight:600;color:var(--accent)}
+.p-note{border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:20px 0;max-width:64ch;color:#3A342A;font-size:16px}
+.p-note strong{color:var(--ink)}
+.p-meta{font-size:13.5px;color:var(--muted);letter-spacing:.02em}
+.p-meta span{margin-right:18px}
+.exp-row{padding:26px 0;border-top:1px solid var(--line)}
+.exp-row:last-child{border-bottom:1px solid var(--line)}
+.exp-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.exp-role{font-weight:600;font-size:18px}
+.exp-org{color:var(--muted);font-size:15px}
+.exp-desc{color:#3A342A;max-width:64ch}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px}
+.about-grid p{margin-bottom:18px;color:#3A342A;max-width:60ch}
+.tools h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:600}
+.tools ul{list-style:none}
+.tools li{padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+.contact-big{font-family:Fraunces,serif;font-size:clamp(26px,4.5vw,44px);font-weight:500;line-height:1.35;letter-spacing:-.01em;max-width:20ch}
+.contact-big a{color:var(--accent);text-decoration:none;border-bottom:2px solid var(--accent)}
+.contact-big a:hover{color:var(--ink);border-color:var(--ink)}
+.contact-row{display:flex;gap:32px;margin-top:36px;flex-wrap:wrap}
+.contact-row a{font-weight:600;font-size:16px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.contact-row a:hover{color:var(--accent);border-color:var(--accent)}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:24px}
+footer p{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+footer .opinion{color:var(--ink);font-weight:500}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.nav-links{display:none}.hero{padding:64px 0 48px}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Briggit Berastegui</a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="kicker">Portfolio — Seattle, Washington</p>
+    <h1>Briggit Berastegui.</h1>
+    <p class="lede">I'm a business analytics master's student at Seattle University. Before Seattle, I spent years in procurement and operations in Panama — managing suppliers, running purchasing, writing the reports people actually used. I still do that work. The datasets are bigger now, and the tools are better.</p>
+    <div class="facts">
+      <div class="fact"><div class="n">140<em>+</em></div><div class="l">feedback records analyzed in a people-analytics externship</div></div>
+      <div class="fact"><div class="n">20<em>%</em></div><div class="l">reporting time cut as a purchasing consultant</div></div>
+      <div class="fact"><div class="n">10<em>+</em></div><div class="l">suppliers managed · ~10% cost savings delivered</div></div>
+      <div class="fact"><div class="n">2028</div><div class="l">MSBA, Seattle University — expected Fall</div></div>
+    </div>
+  </div>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Selected work</h2></div>
+
+      <article class="project">
+        <p class="p-tag">People analytics · Externship</p>
+        <h3 class="p-title">What 140 feedback records were really saying</h3>
+        <p class="p-short"><span class="lead">In short:</span> during a people-analytics externship, I analyzed more than 140 open-ended feedback records with Python — Pandas for structure, TextBlob for sentiment. The themes that surfaced weren't the ones leadership expected. I recommended a two-week pilot to act on them, and the work received a Professional Award.</p>
+        <p class="p-note"><strong>What it is not:</strong> a dashboard demo. The deliverable was a recommendation, not a chart.</p>
+        <p class="p-meta"><span>Python</span><span>Pandas</span><span>TextBlob</span><span>140+ records</span><span>Professional Award</span></p>
+      </article>
+
+      <article class="project">
+        <p class="p-tag">Statistics · In progress</p>
+        <h3 class="p-title">Reading an experiment properly</h3>
+        <p class="p-short"><span class="lead">In short:</span> I'm working through a real e-commerce experiment — 294,478 users — the way an analyst would: validate the data first, clean it with defensible choices, then test. Nothing here is packaged yet. It goes on GitHub when the analysis is mine and I can defend every number.</p>
+        <p class="p-note"><strong>What this section is:</strong> an honest status. No findings are claimed until the work is done.</p>
+        <p class="p-meta"><span>SQL</span><span>Python</span><span>Hypothesis testing</span><span>In progress</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Experience</h2></div>
+
+      <div class="exp-row">
+        <div class="exp-top"><span class="exp-role">International Account Specialist</span><span class="exp-org">Ace International Holdings</span></div>
+        <p class="exp-desc">Managed relationships with 15+ international partners and handled 50+ inquiries a day.</p>
+      </div>
+      <div class="exp-row">
+        <div class="exp-top"><span class="exp-role">Purchasing Consultant (Contract)</span><span class="exp-org">Construex</span></div>
+        <p class="exp-desc">Cut reporting time by 20%.</p>
+      </div>
+      <div class="exp-row">
+        <div class="exp-top"><span class="exp-role">Purchasing Manager / Purchasing Analyst</span><span class="exp-org">Court of Auditors — Panama</span></div>
+        <p class="exp-desc">Managed 10+ suppliers and delivered ~10% cost savings. Authored the Purchasing Procedure Manual the institution adopted.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">About</h2></div>
+      <div class="about-grid">
+        <div>
+          <p>I'm an industrial engineer from Panama, now based in Seattle. I earned my B.S. from the Technological University of Panama, completed a certificate in Business Strategy and Decision Making at the University of Washington, and I'm now pursuing an MSBA at Seattle University, expected Fall 2028.</p>
+          <p>I like work where the numbers have to survive contact with reality — operations, supply chains, and the people inside them. That's where I've spent my career, and it's what I'm building on.</p>
+        </div>
+        <div class="tools">
+          <h4>Tools I use</h4>
+          <ul>
+            <li>Excel</li>
+            <li>Python (Pandas)</li>
+            <li>SQL</li>
+            <li>Tableau</li>
+            <li>Power BI</li>
+            <li>SAP · Salesforce</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Contact</h2></div>
+      <p class="contact-big">The fastest way to reach me is <a href="mailto:briggit37@gmail.com">email</a>.</p>
+      <div class="contact-row">
+        <a href="https://github.com/briggitberastegui">GitHub</a>
+        <a href="mailto:briggit37@gmail.com">Email</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="opinion">Everything here is real work. No tutorial projects, no placeholder case studies.</p>
+    <p>© 2026 Briggit Berastegui · Seattle, Washington</p>
+  </div>
+</footer>
+
+</body>
+</html>
